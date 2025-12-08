@@ -1,725 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Digital Authority Baseline™ | 30-Day Executive Review</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="In 30 days, move from assumed authority to a verified, machine-readable authority model that supports AI, contracts, and compliance.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Authority Baseline™ — Replace Assumed Authority with Verified Authority</title>
+<meta name="description" content="A 30‑day executive diagnostic that maps identity, ownership, and authority, reveals fraud/deepfake/AI execution risks, and gives you a board‑ready plan to fix them.">
+<meta property="og:title" content="Digital Authority Baseline™ — The New Foundation for AI, Governance & Trust">
+<meta property="og:description" content="Most orgs operate with 10+ unauthorized decision points a day. Replace assumption with verification in 30 days.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/mnt/data/Untitled design (2).jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230b3595'/%3E%3Cpath d='M7 17l6 6 12-14' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
 <style>
 :root{
   --ink:#0b3595;          /* Primary Blue */
-  --accent:#ff6600;       /* Kontrak IQ Orange */
-  --bg:#f5f7fb;
+  --ink-600:#144bbf;
+  --ink-700:#0a2a73;
+  --accent:#ff6600;       /* Accent Orange */
+  --accent-700:#e65100;
+  --bg:#ffffff;
+  --text:#0b1220;
+  --muted:#475569;
   --card:#ffffff;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --radius-lg:18px;
-  --radius-md:12px;
-  --shadow-soft:0 18px 45px rgba(15,35,95,.18);
-  --shadow-subtle:0 8px 22px rgba(15,35,95,.08);
-  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --ring: rgba(11,53,149,0.18);
+  --radius:18px;
 }
-*,
-*::before,
-*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:var(--font-sans);
-  background:radial-gradient(circle at top,#e6edff 0,#f5f7fb 36%,#f9fafb 100%);
-  color:#111827;
-  line-height:1.6;
-}
-
-/* Layout */
-.page{
-  max-width:1120px;
-  margin:0 auto;
-  padding:20px 20px 60px;
-}
-section{scroll-margin-top:90px}
-
-/* Badges & tags */
-.badge-row{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:14px;
-  flex-wrap:wrap;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:4px 10px 4px 4px;
-  border-radius:999px;
-  background:rgba(11,53,149,.06);
-  color:var(--ink);
-  font-size:12px;
-  font-weight:500;
-}
-.badge span.icon{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:20px;
-  height:20px;
-  border-radius:999px;
-  background:#fff;
-  box-shadow:0 0 0 1px rgba(11,53,149,.12);
-}
-.badge span.icon svg{
-  width:14px;
-  height:14px;
-}
-
-.tag{
-  background-color: #ff6600;   /* Kontrak IQ orange */
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,'Noto Sans',sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
 /* Header */
-.header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:linear-gradient(to bottom,rgba(245,247,251,.96),rgba(245,247,251,.88),transparent);
-  backdrop-filter:blur(14px);
-}
-.header .inner{
-  max-width:1120px;
-  margin:0 auto 8px;
-  padding:10px 20px 8px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo-mark{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.logo-icon{
-  width:32px;
-  height:32px;
-  border-radius:12px;
-  background:radial-gradient(circle at 10% 0,#ffb36b 0,#ff6600 40%,#0b3595 100%);
-  box-shadow:0 8px 20px rgba(15,23,42,.22);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.logo-icon span{
-  font-weight:800;
-  font-size:18px;
-  color:#f9fafb;
-}
-.logo-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.2;
-}
-.logo-text .title{
-  font-weight:700;
-  font-size:15px;
-  color:#111827;
-  letter-spacing:.03em;
-}
-.logo-text .sub{
-  font-size:12px;
-  color:var(--muted);
-}
-
-.nav{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  font-size:13px;
-}
-.nav a{
-  color:var(--muted);
-  text-decoration:none;
-  padding:6px 8px;
-  border-radius:999px;
-}
-.nav a:hover{
-  background:rgba(11,53,149,.06);
-  color:var(--ink);
-}
-.nav a.primary-link{
-  background:#111827;
-  color:#f9fafb;
-  padding:7px 13px;
-  box-shadow:0 10px 18px rgba(15,23,42,.24);
-}
-.nav a.primary-link:hover{
-  background:#020617;
-}
-
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0}
+.header .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--ink);letter-spacing:.2px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#e7efff;color:var(--ink);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:700}
+.nav a:hover{color:var(--ink)}
+/* Buttons */
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:900;text-decoration:none;border:2px solid var(--ink);color:#fff;background:linear-gradient(180deg,var(--ink),var(--ink-700));box-shadow:0 6px 18px -8px var(--ring);transition:transform .06s ease,filter .15s ease}
+.btn:hover{filter:brightness(1.05)}
+.btn:active{transform:translateY(1px)}
+.btn.secondary{background:#fff;border-color:var(--ink);color:var(--ink)}
+.btn.light{background:#fff;border-color:#94a3b8;color:#0f172a}
+.btn.accent{border-color:var(--accent);background:linear-gradient(180deg,var(--accent),var(--accent-700))}
 /* Hero */
-.hero{
-  margin-top:14px;
-}
-.hero-shell{
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow-soft);
-  padding:24px 26px 26px;
-  background:linear-gradient(135deg,#0b3595 0,#111827 46%,#020617 100%);
-  color:#e5e7eb;
-  position:relative;
-  overflow:hidden;
-}
-.hero-shell::before{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background:
-    radial-gradient(circle at 0 0,rgba(255,102,0,.21) 0,transparent 50%),
-    radial-gradient(circle at 90% 10%,rgba(129,140,248,.26) 0,transparent 55%),
-    radial-gradient(circle at 10% 110%,rgba(56,189,248,.15) 0,transparent 55%);
-  opacity:.9;
-}
-.hero-shell::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 80% 10%,rgba(15,23,42,.85) 0,rgba(15,23,42,1) 35%,transparent 65%);
-  mix-blend-mode:multiply;
-}
-.hero .content{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr);
-  gap:22px;
-  align-items:flex-start;
-}
-.hero-eyebrow{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:8px;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:#cbd5f5;
-}
-.hero-eyebrow .dot{
-  width:6px;
-  height:6px;
-  border-radius:999px;
-  background:var(--accent);
-  box-shadow:0 0 0 4px rgba(255,102,0,.28);
-}
-h1{
-  font-size:38px;
-  line-height:1.15;
-  margin:0 0 8px;
-  color:#f9fafb;
-}
-h1 span.highlight{
-  color:#fed7aa;
-}
-.hero-sub{
-  font-size:14px;
-  color:#d1d5db;
-  max-width:520px;
-  margin-bottom:18px;
-}
-.hero-sub strong{
-  color:#e5e7eb;
-}
-
-/* Stats strip */
-.hero-stats{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:18px;
-}
-.hero-stat{
-  padding:7px 10px;
-  border-radius:999px;
-  border:1px solid rgba(148,163,184,.55);
-  background:rgba(15,23,42,.48);
-  font-size:11px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.hero-stat span.value{
-  font-weight:700;
-  color:#e5e7eb;
-}
-.hero-stat span.label{
-  color:#cbd5f5;
-}
-
-/* CTA area */
-.stack{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-  margin-bottom:6px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:9px 16px;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:600;
-  text-decoration:none;
-  cursor:pointer;
-  border:none;
-}
-.btn.primary{
-  background:linear-gradient(135deg,#ff7b1a 0,#ff6600 44%,#f97316 100%);
-  color:#111827;
-  box-shadow:0 14px 30px rgba(249,115,22,.45);
-}
-.btn.primary:hover{
-  filter:brightness(1.05);
-}
-.btn.outline{
-  background:transparent;
-  color:#e5e7eb;
-  border:1px solid rgba(148,163,184,.7);
-}
-.btn.outline:hover{
-  background:rgba(15,23,42,.65);
-}
-.btn .sub{
-  font-size:11px;
-  font-weight:400;
-  opacity:.9;
-}
-.microcopy{
-  font-size:11px;
-  color:#9ca3af;
-}
-
-/* Hero right card */
-.hero-card{
-  background:radial-gradient(circle at 0 0,rgba(148,163,253,.16),transparent 65%),rgba(15,23,42,.92);
-  border-radius:16px;
-  border:1px solid rgba(148,163,184,.7);
-  padding:14px 14px 14px;
-  box-shadow:var(--shadow-subtle);
-}
-.hero-card h2{
-  font-size:15px;
-  color:#e5e7eb;
-  margin:0 0 4px;
-}
-.hero-card p{
-  font-size:12px;
-  color:#cbd5f5;
-  margin:0 0 10px;
-}
-.hero-card-list{
-  list-style:none;
-  padding:0;
-  margin:0 0 8px;
-  display:grid;
-  gap:5px;
-  font-size:12px;
-}
-.hero-card-list li{
-  display:flex;
-  align-items:flex-start;
-  gap:8px;
-}
-.hero-card-list svg{
-  margin-top:2px;
-}
-.hero-tag-chip{
-  display:inline-flex;
-  align-items:center;
-  padding:3px 8px;
-  border-radius:999px;
-  background:rgba(15,23,42,.9);
-  font-size:11px;
-  color:#cbd5f5;
-  border:1px dashed rgba(148,163,184,.7);
-}
-
-/* Section shell */
-.section{
-  margin-top:26px;
-}
-.section-card{
-  background:var(--card);
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow-subtle);
-  padding:22px 22px 20px;
-  border:1px solid rgba(15,23,42,.04);
-}
-.section-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:16px;
-  margin-bottom:12px;
-}
-.section-header h2{
-  margin:0;
-  font-size:22px;
-  color:#111827;
-}
-.section-header p{
-  margin:4px 0 0;
-  font-size:13px;
-  color:var(--muted);
-}
-.section-label{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:var(--muted);
-}
-
-/* Grid helpers */
-.grid{
-  display:grid;
-  gap:14px;
-}
-.grid.features{
-  grid-template-columns: minmax(0,1.1fr) minmax(0,1.4fr);
-}
-
-/* Feature cards */
-.feature{
-  padding:14px 14px 12px;
-  border-radius:var(--radius-md);
-  border:1px solid var(--border);
-  background:linear-gradient(to bottom,#fcfcff, #f9fafb);
-}
-.feature h3{
-  margin:0 0 6px;
-  font-size:14px;
-  color:#111827;
-}
-.feature p{
-  margin:0 0 8px;
-  font-size:12px;
-  color:var(--muted);
-}
-.chip-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:4px;
-}
-.chip{
-  padding:3px 8px;
-  border-radius:999px;
-  border:1px solid rgba(148,163,184,.6);
-  font-size:11px;
-  color:#4b5563;
-  background:#f9fafb;
-}
-
-/* Before/after visual */
-.visual-card{
-  padding:12px 12px 10px;
-  border-radius:var(--radius-md);
-  border:1px solid var(--border);
-  background:linear-gradient(135deg,#eff6ff,#f9fafb);
-}
-.visual-card-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:8px;
-}
-.visual-card-header h3{
-  margin:0;
-  font-size:13px;
-}
-.visual-label{
-  font-size:11px;
-  color:var(--muted);
-}
-.visual-pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-bottom:8px;
-}
-.visual-pill{
-  padding:3px 8px;
-  border-radius:999px;
-  font-size:11px;
-  background:#0b3595;
-  color:#e5edff;
-}
-.visual-pill.secondary{
-  background:#111827;
-}
-.img-wrap{
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(148,163,184,.55);
-  background:#020617;
-}
-.img-wrap img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-
-/* Why now list */
-.list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:8px;
-}
-.list-item{
-  display:flex;
-  gap:10px;
-  font-size:13px;
-}
-.list-item-icon{
-  width:18px;
-  height:18px;
-  flex-shrink:0;
-  border-radius:999px;
-  background:rgba(11,53,149,.08);
-  border:1px solid rgba(11,53,149,.4);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  color:var(--ink);
-}
-.list-item strong{color:#111827}
-
-/* Process / TRUTH */
-.process-layout{
-  display:grid;
-  grid-template-columns:minmax(0,1.4fr) minmax(0,1.1fr);
-  gap:18px;
-}
-.process-steps{
-  display:grid;
-  gap:8px;
-}
-.step{
-  padding:9px 10px 8px;
-  border-radius:var(--radius-md);
-  border:1px dashed rgba(148,163,184,.8);
-  background:#f9fafb;
-}
-.step-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:4px;
-}
-.step-title{
-  font-size:13px;
-  font-weight:600;
-}
-.step-tag{
-  font-size:11px;
-  padding:3px 8px;
-  border-radius:999px;
-  background:#e5edff;
-  color:#1d4ed8;
-}
-.step p{
-  margin:0;
-  font-size:12px;
-  color:#4b5563;
-}
-.step-meta{
-  margin-top:5px;
-  font-size:11px;
-  color:#6b7280;
-}
-.truth-label{
-  font-size:11px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.truth-name{
-  font-size:17px;
-  font-weight:700;
-  margin-bottom:4px;
-}
-.truth-sub{
-  font-size:13px;
-  color:var(--muted);
-}
-
+.hero{position:relative;min-height:72vh;display:grid;align-items:center;background:radial-gradient(900px 500px at 70% -10%, rgba(11,53,149,0.10), transparent),radial-gradient(800px 400px at -10% 100%, rgba(255,102,0,0.06), transparent),#fff}
+.hero::after{content:'';position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:url('/mnt/data/Untitled design (2).jpg');background-size:cover;background-position:center}
+.hero .content{position:relative;padding:64px 0}
+.kicker{color:var(--ink);font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+h1{font-size:44px;line-height:1.1;margin:.3rem 0 1rem;font-weight:900;color:var(--text)}
+h1 strong{color:var(--ink)}
+h2{font-size:32px;margin:2.2rem 0 1rem;color:var(--text)}
+h3{font-size:22px;margin:1.6rem 0 .6rem}
+.lead{font-size:19px;color:var(--muted);max-width:60ch}
+.stack{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.note{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;display:inline-flex;gap:8px;align-items:center}
+/* Sections */
+.grid{display:grid;gap:24px}
+.grid.features{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid #e2e8f0;border-radius:var(--radius);padding:22px;box-shadow:0 16px 40px -24px var(--ring)}
+.card h3{margin-top:6px}
+.eyebrow{color:var(--ink);font-weight:900;letter-spacing:.02em;text-transform:uppercase;font-size:12px}
+.callout{border-left:4px solid var(--accent);padding-left:16px}
+/* Images */
+.img-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:10px;box-shadow:0 20px 50px -28px var(--ring)}
+.img-wrap img{width:100%;height:auto;border-radius:12px;display:block}
 /* Pricing */
-.pricing{
-  display:grid;
-  grid-template-columns: minmax(0,1.25fr) minmax(0,1fr);
-  gap:16px;
-}
-.price-card{
-  padding:14px 14px 12px;
-  border-radius:var(--radius-md);
-  border:1px solid var(--border);
-  background:#f9fafb;
-}
-.price-row{
-  display:flex;
-  align-items:baseline;
-  gap:6px;
-}
-.price-main{
-  font-size:22px;
-  font-weight:700;
-  color:#111827;
-}
-.price-note{
-  font-size:12px;
-  color:var(--muted);
-}
-.price-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:8px;
-  font-size:11px;
-}
-.price-badge{
-  padding:3px 8px;
-  border-radius:999px;
-  background:#111827;
-  color:#e5e7eb;
-}
-.price-badge.light{
-  background:#e5edff;
-  color:#1d4ed8;
-}
-.roi{
-  padding:10px 12px 9px;
-  border-radius:var(--radius-md);
-  border:1px dashed rgba(22,163,74,.6);
-  background:linear-gradient(135deg,#ecfdf3,#f0fdf4);
-  font-size:12px;
-}
-.roi strong{color:#166534}
-.roi em{
-  font-style:normal;
-  color:#111827;
-  font-weight:600;
-}
-
-.scope-card{
-  padding:12px 12px 10px;
-  border-radius:var(--radius-md);
-  border:1px solid var(--border);
-  background:#f9fafb;
-  font-size:12px;
-}
-.scope-list{
-  list-style:none;
-  padding:0;
-  margin:8px 0 0;
-  display:grid;
-  gap:4px;
-}
-.scope-list li{
-  display:flex;
-  gap:6px;
-}
-.scope-list strong{color:#111827}
-
-/* What you get */
-.deliverables{
-  display:grid;
-  grid-template-columns: minmax(0,1.15fr) minmax(0,1.1fr);
-  gap:16px;
-}
-.deliverable-card{
-  padding:12px 12px 10px;
-  border-radius:var(--radius-md);
-  border:1px solid var(--border);
-  background:#f9fafb;
-  font-size:12px;
-}
-.deliverable-card h3{
-  margin:0 0 6px;
-  font-size:14px;
-}
-.deliverable-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:4px;
-}
-.deliverable-list li{
-  display:flex;
-  gap:8px;
-}
-.deliverable-list span.bullet{
-  width:6px;
-  height:6px;
-  border-radius:999px;
-  margin-top:5px;
-  flex-shrink:0;
-  background:#0b3595;
-}
-
-/* Contact / footer */
-.contact-card{
-  margin-top:20px;
-  padding:16px 16px 14px;
-  border-radius:var(--radius-lg);
-  border:1px solid rgba(15,23,42,.08);
-  background:linear-gradient(135deg,#0b3595 0,#111827 45%,#020617 100%);
-  color:#e5e7eb;
-  display:grid;
-  grid-template-columns:minmax(0,1.6fr) minmax(0,1.1fr);
-  gap:18px;
-}
-.contact-card h2{
-  margin:0 0 4px;
-  font-size:19px;
-  color:#f9fafb;
-}
-.contact-card p{
-  margin:4px 0;
-  font-size:13px;
-  color:#d1d5db;
-}
-.contact-meta{
-  font-size:11px;
-  color:#9ca3af;
-}
-.footer{
-  margin-top:18px;
-  font-size:11px;
-  color:#9ca3af;
-  text-align:center;
-}
-
+.pricing{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.price{border:2px solid #e2e8f0;border-radius:18px;padding:22px}
+.price .tag{font-size:12px;font-weight:900;color:#1e293b;padding:4px 10px;background:#f1f5f9;border-radius:999px;display:inline-block}
+.price h3{margin:.2rem 0}
+.price .num{font-size:36px;font-weight:900;color:var(--text)}
+.price ul{margin:14px 0 0;padding-left:18px}
+/* Quotes */
+.quote{font-style:italic;color:#334155}
+/* FAQ */
+.faq details{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px}
+.faq summary{cursor:pointer;font-weight:900;color:var(--text)}
+/* Footer */
+footer{margin-top:60px;background:linear-gradient(180deg,#0a2a73,#061839);color:#e2e8f0}
+footer a{color:#fff}
+.footer-inner{padding:30px 0}
+.small{font-size:12px;color:#cbd5e1}
+.hr{height:1px;background:#e2e8f0;margin:28px 0;opacity:.25}
 /* Responsive */
-@media (max-width:640px){
-  h1{font-size:34px}
-  h2{font-size:26px}
-}
-
-@media (max-width:768px){
-  /* Stack header logo + nav */
+@media (max-width:640px){h1{font-size:34px}h2{font-size:26px}}
+  @media (max-width:768px){
+  /* Header: stack logo + nav, let nav wrap */
   .header .inner{
     flex-direction:column;
     align-items:flex-start;
@@ -733,16 +99,20 @@ h1 span.highlight{
   }
 
   .nav a{
-    margin:4px 8px 0 0;
+    margin:4px 10px 0 0;
     font-size:13px;
   }
 
-  /* Tighten hero padding on mobile */
-  .hero .content{
-    padding:36px 0 40px;
+  /* Hero: reduce height & padding so it fits better on phones */
+  .hero{
+    min-height:auto;
   }
 
-  /* Make CTA buttons full-width on mobile */
+  .hero .content{
+    padding:40px 0 32px;
+  }
+
+  /* CTAs: full-width buttons on mobile */
   .stack{
     flex-direction:column;
     align-items:stretch;
@@ -753,507 +123,182 @@ h1 span.highlight{
     text-align:center;
   }
 
-  /* Make cards and pricing one column */
-  .grid.features{
-    grid-template-columns:1fr;
-  }
-
+  /* Pricing: force single column on small screens */
   .pricing{
     grid-template-columns:1fr;
-  }
-
-  .process-layout{
-    grid-template-columns:1fr;
-  }
-
-  .deliverables{
-    grid-template-columns:1fr;
-  }
-
-  .contact-card{
-    grid-template-columns:1fr;
-  }
-}
-
-@media (max-width:900px){
-  .hero .content{
-    grid-template-columns: minmax(0,1.35fr);
-  }
-  .hero-card{
-    margin-top:6px;
   }
 }
 </style>
 </head>
 <body>
 <header class="header">
-  <div class="inner">
-    <div class="logo-mark">
-      <div class="logo-icon"><span>DA</span></div>
-      <div class="logo-text">
-        <div class="title">Digital Authority 360</div>
-        <div class="sub">Kontrak IQ | Executive Readiness</div>
-      </div>
-    </div>
+  <div class="container inner">
+    <div class="logo"><span>Digital Authority</span><span class="badge">360</span></div>
     <nav class="nav">
       <a href="#why">Why Now</a>
-      <a href="#truth">30-Day TRUTH Process</a>
-      <a href="#scope">Scope & Pricing</a>
-      <a href="#deliverables">What You Get</a>
-      <a class="primary-link" href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" target="_blank">Book Executive Briefing</a>
+      <a href="#baseline">Baseline</a>
+      <a href="#process">TRUTH</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" class="btn secondary">Book Briefing</a>
     </nav>
   </div>
 </header>
-
-<main class="page">
-
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="hero-shell">
-      <div class="content">
-        <div>
-          <div class="hero-eyebrow">
-            <span class="dot"></span>
-            <span>30-Day Digital Authority Baseline™</span>
-          </div>
-          <div class="badge-row">
-            <div class="badge">
-              <span class="icon">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10" fill="#0b3595" opacity=".16"></circle>
-                  <path d="M8 12.5l2.2 2.3L16 8.5" stroke="#0b3595" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </span>
-              <span>Designed for CEOs, CFOs, CIOs & Trustees</span>
-            </div>
-            <span class="tag">Start Here</span>
-          </div>
-
-          <h1>Is Your Authority Model Ready for AI,<br><span class="highlight">Or Running on Trust and Memory?</span></h1>
-          <p class="hero-sub">
-            In 30 days, we move you from <strong>assumed authority</strong> (titles, trust, and email threads)
-            to a <strong>verified, machine-readable authority model</strong> that can safely power
-            AI, contracts, and critical decisions.
-          </p>
-
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="value">60–80%</span>
-              <span class="label">of “authority” today lives in org charts, email, and tribal knowledge</span>
-            </div>
-            <div class="hero-stat">
-              <span class="value">9–15%</span>
-              <span class="label">typical margin leakage when decisions are made by the wrong people</span>
-            </div>
-            <div class="hero-stat">
-              <span class="value">30 days</span>
-              <span class="label">to a board-ready authority map & baseline</span>
-            </div>
-          </div>
-
-          <div class="stack">
-            <a class="btn primary" href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" target="_blank">
-              Book a 20-min Executive Briefing
-            </a>
-            <a class="btn outline" href="#truth">
-              <span>Preview the 30-Day TRUTH Process</span>
-            </a>
-          </div>
-          <div class="microcopy">No prep required. We’ll use your real structures, not theory, to evaluate readiness.</div>
-        </div>
-
-        <aside class="hero-card">
-          <h2>Where “Authority” Is Actually Breaking Today</h2>
-          <p>
-            Every executive thinks they know who is allowed to do what until there is
-            a breach, a fraud event, or a major contract decision gone wrong.
-          </p>
-          <ul class="hero-card-list">
-            <li>
-              <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
-                <circle cx="8" cy="8" r="7" stroke="#4b5563" stroke-width="1.1"></circle>
-                <path d="M5 8.2L7 10l4-4" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span>People with <strong>actual signing power</strong> are not the same as the ones AI thinks are allowed.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
-                <circle cx="8" cy="8" r="7" stroke="#4b5563" stroke-width="1.1"></circle>
-                <path d="M5 8.2L7 10l4-4" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span>Authority is scattered across <strong>HR systems, board minutes, email approvals, and legacy PDFs</strong>.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" width="16" height="16" fill="none">
-                <circle cx="8" cy="8" r="7" stroke="#4b5563" stroke-width="1.1"></circle>
-                <path d="M5 8.2L7 10l4-4" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span>AI, contracts, and workflows are being deployed on top of authority models that <strong>no one has actually validated</strong>.</span>
-            </li>
-          </ul>
-          <div class="hero-tag-chip">
-            Digital Authority Baseline™ = before you scale AI, contracts, or automation, make sure the right people actually have the right power.
-          </div>
-        </aside>
-      </div>
+         
+<section class="hero">
+  <div class="container content">
+    <div class="kicker">Digital Authority Baseline™</div>
+    <h1>Build a Foundation of <strong>Verified Authority</strong> Before You Automate or Deploy AI.</h1>
+    <p class="lead">Most organizations operate with <strong>10+ unauthorized decision points</strong> every day. AI does not ask for permission, it executes what’s written. The Baseline replaces assumption with verification in 30 days.</p>
+    <div class="stack">
+    <a 
+  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" 
+  class="btn accent" 
+  target="_blank"
+>
+  Book a 20-min Executive Briefing
+</a>
+      <a href="#pricing" class="btn light">See Pricing</a>
     </div>
-  </section>
-
-  <!-- Why Now -->
-  <section class="section" id="why">
-    <div class="section-card">
-      <div class="section-header">
-        <div>
-          <div class="section-label">Why This, Why Now</div>
-          <h2>AI, Fraud, and Regulation Are Exposing Weak Authority Models</h2>
-          <p>
-            Boards, regulators, and attackers are all asking the same question from different angles:
-            <strong>“Who actually had the authority to do this?”</strong>
-          </p>
-        </div>
-        <div style="max-width:260px;font-size:12px;color:var(--muted);">
-          The Digital Authority Baseline™ is designed as your <strong>“SOC-2 readiness”</strong> for authority:
-          a fast way to understand if your identity, roles, and decision rights are ready for AI-scale execution.
-        </div>
-      </div>
-
-      <div class="grid features">
-        <div class="feature">
-          <h3>Most Authority Today Is Assumed, Not Verified</h3>
-          <p>
-            Titles, signatures, and long tenure have become a proxy for authority. But when something goes wrong,
-            you need <strong>traceable, machine-readable proof</strong> of who was empowered to act.
-          </p>
-          <ul class="list">
-            <li class="list-item">
-              <div class="list-item-icon">1</div>
-              <div>
-                <strong>AI agents acting on vague rules.</strong><br>
-                “Let the VP approve” is not a rule a machine can safely execute without a verified map of who the VP is
-                across entities, systems, and time.
-              </div>
-            </li>
-            <li class="list-item">
-              <div class="list-item-icon">2</div>
-              <div>
-                <strong>Contracts relying on outdated delegations.</strong><br>
-                Many delegations of authority are sitting in PDFs that have never been reconciled with
-                who is actually signing and approving today.
-              </div>
-            </li>
-            <li class="list-item">
-              <div class="list-item-icon">3</div>
-              <div>
-                <strong>Fraud and error hiding in “business as usual”.</strong><br>
-                The easiest way to hide fraud is inside processes where no one has a clear, current picture
-                of who is supposed to be doing what.
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="visual-card">
-          <div class="visual-card-header">
-            <h3>Before & After: Authority as a Diagram vs. Authority as Data</h3>
-            <span class="visual-label">From pretty boxes to enforceable rules</span>
-          </div>
-          <div class="visual-pills">
-            <span class="visual-pill">Before: Org charts & PDFs</span>
-            <span class="visual-pill secondary">After: Machine-readable authority graph</span>
-          </div>
-          <div class="img-wrap">
-            <img alt="Before vs After — Assumed vs Verified Authority" src="Before & Afterv1.png" />
-          </div>
-        </div>
-      </div>
+    <div class="stack" style="margin-top:14px">
+      <span class="note">No new software required</span>
+      <span class="note">Board & auditor ready</span>
+      <span class="note">Fast: 30 days</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRUTH Process -->
-  <section class="section" id="truth">
-    <div class="section-card">
-      <div class="section-header">
-        <div>
-          <div class="section-label">The 30-Day TRUTH Process</div>
-          <h2>From Trust-Based Authority to a Verified, Machine-Readable Model</h2>
-          <p>
-            We use a structured, time-boxed process called <strong>TRUTH</strong> to baseline your authority model.
-            It’s designed to be <strong>executive-friendly</strong> but <strong>technically precise</strong> enough
-            to plug into your identity, contracts, and AI roadmap.
-          </p>
-        </div>
-        <div style="max-width:260px;font-size:12px;color:var(--muted);">
-          You bring your current structures (org charts, delegations of authority, board minutes, trust documents, etc.).
-          We bring the <strong>TRUTH framework</strong> and Kontrak IQ’s authority mapping lens.
-        </div>
-      </div>
-
-      <div class="process-layout">
-        <div>
-          <div class="truth-label">TRUTH Framework</div>
-          <div class="truth-name">Trace → Reveal → Unify → Test → Harden.</div>
-          <p class="truth-sub">
-            A pragmatic, five-step sequence to move authority from “we think” to “we know”
-            in a way your AI, contracts, and controls can actually use.
-          </p>
-
-          <div class="process-steps">
-            <div class="step">
-              <div class="step-header">
-                <div class="step-title">T1 — Trace: Where Does Authority Live Today?</div>
-                <span class="step-tag">Days 1–5</span>
-              </div>
-              <p>
-                We inventory how authority is currently defined and exercised across key domains:
-                <strong>legal, finance, procurement, operations, and technology.</strong>
-              </p>
-              <div class="step-meta">
-                Inputs: org charts, DOA PDFs, board minutes, trust docs, signatory lists, contract playbooks, system roles.
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-header">
-                <div class="step-title">R — Reveal: Where Are the Gaps, Conflicts, and Risks?</div>
-                <span class="step-tag">Days 5–10</span>
-              </div>
-              <p>
-                We surface <strong>misalignments, conflicts, and blind spots</strong>:
-                people with power but no record, records with power no one uses, and workflows that ignore
-                the authority rules on paper.
-              </p>
-              <div class="step-meta">
-                Output: heatmap of high-risk authority areas across entities, processes, and systems.
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-header">
-                <div class="step-title">U — Unify: A Single, Coherent Authority View</div>
-                <span class="step-tag">Days 10–18</span>
-              </div>
-              <p>
-                We consolidate your authority picture into a <strong>single logical model</strong>:
-                roles, limits, conditions, and exceptions that can be read by both humans and machines.
-              </p>
-              <div class="step-meta">
-                Output: draft digital authority map (who can do what, where, and under which conditions).
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-header">
-                <div class="step-title">T2 — Test: Run Real-World Scenarios</div>
-                <span class="step-tag">Days 18–24</span>
-              </div>
-              <p>
-                We pressure-test the model against <strong>real scenarios</strong>:
-                contract approvals, wire releases, major purchases, write-offs, AI agent actions, and trustee decisions.
-              </p>
-              <div class="step-meta">
-                Output: list of authority rules that hold, fail, or need refinement before automation or AI.
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-header">
-                <div class="step-title">H — Harden: Board-Ready & AI-Ready Baseline</div>
-                <span class="step-tag">Days 24–30</span>
-              </div>
-              <p>
-                We finalize a <strong>board-ready, machine-readable authority baseline</strong> with
-                clear next-step options for identity, contracts, AI, and controls.
-              </p>
-              <div class="step-meta">
-                Output: Digital Authority Baseline™ report and implementation playbook.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="visual-card">
-            <div class="visual-card-header">
-              <h3>The TRUTH Visual</h3>
-              <span class="visual-label">One path from “we trust” to “we can prove it”</span>
-            </div>
-            <div class="img-wrap">
-              <img alt="TRUTH process visual" src="The TRUTH Framework.png" />
-            </div>
-          </div>
-          <p style="margin-top:10px;font-size:12px;color:var(--muted);">
-            Each stage of TRUTH is mapped to what your <strong>identity systems</strong>,
-            <strong>contract platforms</strong>, and <strong>AI initiatives</strong> need to safely act on authority.
-            You are not buying theory — you are buying a <strong>baseline model</strong> that you can plug into real roadmaps.
-          </p>
-          <p>30 days from assumed authority to a verified, machine-readable authority model with a plan to implement.</p>
-        </div>
-      </div>
+<section class="container" id="why">
+  <h2 class="callout">Why Now</h2>
+  <div class="grid features">
+    <div class="card">
+      <span class="eyebrow">Core Risk</span>
+      <h3>Assumed Authority</h3>
+      <p>Approvals by habit, conflicting roles, and signatures without proof-of-authority create hidden exposure, margin leakage, and audit risk.</p>
     </div>
-  </section>
-
-  <!-- Scope & Pricing -->
-  <section class="section" id="scope">
-    <div class="section-card">
-      <div class="section-header">
-        <div>
-          <div class="section-label">Scope & Investment</div>
-          <h2>Priced Like a Diagnostic. Built Like an Executive-Grade Control</h2>
-          <p>
-            Digital Authority Baseline™ is structured like a SOC-2 readiness or AI readiness assessment:
-            <strong>time-boxed, outcome-driven, and designed to stand up in front of your board or trustees.</strong>
-          </p>
-        </div>
-      </div>
-
-      <div class="pricing">
-        <div class="price-card">
-          <div class="price-row">
-            <div class="price-main">$7,500–$15,000</div>
-            <div class="price-note">
-              per baseline, depending on<span class="hide-mobile"><br></span> complexity & structure
-            </div>
-          </div>
-          <div class="price-badges">
-            <span class="price-badge">Small orgs (single entity): $7,500</span>
-            <span class="price-badge">Mid-market / multi-department: $12,500</span>
-            <span class="price-badge light">Multi-entity or trust structures: $15,000</span>
-          </div>
-          <div class="roi" style="margin-top:10px;">
-            <strong>Expected impact:</strong> Even a <em>1–3% reduction in authority-related leakage</em>
-            across spend, contracts, and decisions typically translates to <strong>$500K–$5M+</strong>
-            in avoided loss or protected value for mid-market and enterprise organizations.
-          </div>
-        </div>
-
-        <div class="scope-card">
-          <h3 style="margin:0 0 6px;font-size:14px;color:#111827;">What’s in Scope for the 30-Day Baseline</h3>
-          <ul class="scope-list">
-            <li>
-              <span>•</span>
-              <span><strong>Authority inventory</strong> across key domains (legal, finance, procurement, operations, technology).</span>
-            </li>
-            <li>
-              <span>•</span>
-              <span><strong>Risk & conflict heatmap</strong> for how authority is currently defined vs. how it is actually used.</span>
-            </li>
-            <li>
-              <span>•</span>
-              <span><strong>Draft digital authority map</strong> (roles, limits, conditions, exceptions).</span>
-            </li>
-            <li>
-              <span>•</span>
-              <span><strong>Scenario tests</strong> against real approvals, payments, trustee actions, and AI plans.</span>
-            </li>
-            <li>
-              <span>•</span>
-              <span><strong>Board-ready baseline report & implementation options</strong> (identity, contracts, AI, controls).</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="card">
+      <span class="eyebrow">AI Execution</span>
+      <h3>Models act on what’s written</h3>
+      <p>AI and automation won’t infer intent. Without a verified authority layer, systems can execute unsafe or invalid actions.</p>
     </div>
-  </section>
-
-  <!-- Deliverables -->
-  <section class="section" id="deliverables">
-    <div class="section-card">
-      <div class="section-header">
-        <div>
-          <div class="section-label">What You Walk Away With</div>
-          <h2>A Baseline You Can Show to Your Board, Auditors, and AI Teams</h2>
-          <p>
-            This is not a slide-only “strategy workshop”. You leave with tangible, reference-able assets that can plug
-            into your security, compliance, AI, and contract roadmaps.
-          </p>
-        </div>
-      </div>
-
-      <div class="deliverables">
-        <div class="deliverable-card">
-          <h3>Digital Authority Baseline™ Report (15–20 pages)</h3>
-          <ul class="deliverable-list">
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Executive summary</strong> of your current authority posture and key risks.</span>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Authority inventory</strong> across entities, domains, and systems.</span>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Heatmaps & visuals</strong> showing where authority is misaligned, duplicated, or missing.</span>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Scenario test results</strong> for real approvals, payments, AI, and trustee actions.</span>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Board-ready narrative</strong> tying authority to AI, fraud, contracts, and regulatory expectations.</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="deliverable-card">
-          <h3>Machine-Readable Authority Blueprint</h3>
-          <ul class="deliverable-list">
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Structured model</strong> (roles, limits, conditions) your teams can use as a starting schema.</span>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <span><strong>Priority integration list</strong> for identity, contract, and workflow platforms.</span>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <span><strong>AI readiness notes</strong> on where agents and automations can safely operate today — and where they cannot yet.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="card">
+      <span class="eyebrow">Impersonation</span>
+      <h3>Deepfake & Fraud</h3>
+      <p>Attackers don’t need to hack your tech — they exploit assumed authority. PoA checks and finance gates stop it.</p>
     </div>
-  </section>
+  </div>
+  <div class="hr"></div>
+  <div class="img-wrap"><img alt="Before vs After — Assumed vs Verified Authority" <img src="Before & Afterv1.png" />
+</section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="contact-card">
-      <div>
-        <h2>Ready to See Your Digital Authority Truth?</h2>
-        <p>
-          In our first 20-minute executive briefing, we’ll pressure-test one or two real scenarios
-          (e.g., a major approval, trustee action, or AI use case) against your current authority model.
-        </p>
-        <p class="contact-meta">
-          You’ll leave with a clear view of whether a Digital Authority Baseline™ makes sense now,
-          or where it should sit in your roadmap.
-        </p>
-      </div>
-      <div>
-        <div class="stack" style="margin-bottom:8px;">
-          <a class="btn primary" href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" target="_blank">
-            Book a 20-min Executive Briefing
-          </a>
-          <a class="btn outline" href="mailto:hello@kontrakiq.com?subject=Executive%20Briefing:%20Digital%20Authority%20Baseline">
-            Request more information by email
-          </a>
-        </div>
-      
+<section class="container" id="baseline">
+  <h2>What You Get in 30 Days</h2>
+  <div class="grid features">
+    <div class="card"><h3>Identity • Ownership • Authority Map</h3><p>Cross‑entity, cross‑system mapping of who can do what — legally, digitally, and operationally.</p></div>
+    <div class="card"><h3>Fraud • Deepfake • AI Exposure</h3><p>Quantified risk with concrete examples, plus where models and workflows can fail.</p></div>
+    <div class="card"><h3>Verified Authority Blueprint (Draft)</h3><p>A unified, machine‑readable model: roles, limits, delegation, revocation.</p></div>
+    <div class="card"><h3>Digital Authority Score</h3><p>0–100 scoring with Red/Yellow/Green zones for board and auditor conversations.</p></div>
+    <div class="card"><h3>12‑Week Remediation Roadmap</h3><p>Prioritized fixes, owners, and sequence to harden authority and enable AI safely.</p></div>
+  </div>
+</section>
+
+<section class="container" id="process">
+  <h2>Our TRUTH Process</h2>
+  <p class="lead">Trace → Reveal → Unify → Test → Harden.</p>
+  30 days from assumed authority to a verified, machine‑readable authority model with a plan to implement.</p>
+  <div class="img-wrap"><img alt="TRUTH process visual" <img src="The TRUTH Framework.png" />
+</section>
+
+<section class="container" id="pricing">
+  <h2>Transparent Pricing</h2>
+  <div class="pricing">
+    <div class="price">
+      <span class="tag">Start Here</span>
+      <h3>Digital Authority Baseline™</h3>
+      <div class="num">$7,500–$15,000</div>
+      <ul>
+        <li>30‑day diagnostic & report</li>
+        <li>Scorecard + Roadmap</li>
+        <li>Verified Authority Blueprint (draft)</li>
+      </ul>
+      <a class="btn" href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature">Book Briefing</a>
+    </div>
+    <div class="price">
+      <span class="tag">Fix Gaps</span>
+      <h3>Governance & Authority Blueprint</h3>
+      <div class="num">$35,000–$65,000</div>
+      <ul>
+        <li>Unified authority model</li>
+        <li>Delegation & signing rights alignment</li>
+        <li>Enforcement logic & guidance</li>
+      </ul>
+    </div>
+    <div class="price">
+      <span class="tag">Scale</span>
+      <h3>Digital Authority Deployment</h3>
+      <div class="num">$125,000–$250,000+</div>
+      <ul>
+        <li>PoA credentials & enforcement</li>
+        <li>AI execution safety layer</li>
+        <li>Systems integration & monitoring</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>What Leaders Say</h2>
+  <div class="grid features">
+    <div class="card">
+      <p class="quote">“Digital Authority revealed risks we didn’t know existed — and fixed governance issues we’d been avoiding for years.”</p>
+      <p>— COO, Mid‑Market Manufacturing</p>
+    </div>
+    <div class="card">
+      <p class="quote">“Our AI initiative stalled without clear authority. This work gave us the foundation we needed to move forward.”</p>
+      <p>— CIO, Professional Services Firm</p>
+    </div>
+    <div class="card">
+      <p class="quote">“The Baseline is worth the investment for the clarity alone.”</p>
+      <p>— General Counsel, Multi‑Entity Trust</p>
+    </div>
+  </div>
+</section>
+
+<section class="container faq" id="faq">
+  <h2>FAQ</h2>
+  <div class="grid">
+    <details><summary>Do we need to change software to start?</summary><p>No. The Baseline is diagnostic. We work with your current systems and documents to map the truth, then recommend targeted fixes.</p></details>
+    <details><summary>How intrusive is this?</summary><p>Lightweight. Short interviews plus secure document/system role reviews. Most of the work is synthesis and modeling.</p></details>
+    <details><summary>Why start with a Baseline instead of going straight to deployment?</summary><p>The Baseline reduces risk by revealing contradictions between legal, system, and real‑world authority before making changes.</p></details>
+    <details><summary>What happens after the Baseline?</summary><p>We can deliver a Governance & Authority Blueprint (6–12 weeks) and, if desired, a full Digital Authority Deployment with PoA credentials, finance gates, and AI execution safeguards.</p></details>
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <h2>Ready to Replace Assumed Authority with Verified Authority?</h2>
+  <p class="lead">Start with a private 20‑minute executive briefing. We’ll quickly assess fit and timing, and outline what your 30‑day Baseline will deliver.</p>
+  <div class="stack">
+  <a 
+  class="btn accent" 
+  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+  target="_blank"
+>
+  Request Briefing
+</a>
+    <a class="btn secondary" href="#pricing">Download Brochure</a>
+  </div>
+</section>
 
 <footer>
   <div class="container footer-inner">
     <div class="grid" style="grid-template-columns:1.4fr 1fr;">
       <div>
         <div class="logo" style="color:#fff">Digital Authority 360</div>
-        <p class="small">Build a Foundation of Verified Authority designed to <em>power</em> your AI, contract, or compliance investments — so the right people
-      have the right power, in ways your systems can actually understand.</p>
+        <p class="small">Build a Foundation of Verified Authority</p>
       </div>
       <div>
         <p><strong>Contact</strong><br>
         <a href="mailto:info@digitalauthority360.ai">info@digitalauthority360.ai</a></p>
-         <p <em>Digital Authority 360 does not provide legal or tax advice.<em></p>
       </div>
     </div>
     <div class="hr"></div>

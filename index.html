@@ -119,9 +119,15 @@ footer a{color:#fff}
 .header.nav-open .menu-toggle span:nth-child(3){
   transform:translateY(-5px) rotate(-45deg);
 }
+  /* Hide mobile menu button on desktop */
+.menu-toggle{
+  display:none;
+}
 /* Responsive */
 @media (max-width:640px){h1{font-size:34px}h2{font-size:26px}}
   @media (max-width:768px){
+     .menu-toggle{
+    display:flex;   /* visible on mobile only */
   /* Show burger, hide full nav by default */
   .menu-toggle{
     display:inline-flex;
@@ -156,36 +162,58 @@ footer a{color:#fff}
   }
 }
 @media (max-width:768px){
-  /* More side buffer on mobile */
+
+  /* More buffer on mobile */
   .container{
-    padding:0 22px;
+    padding:0 28px;          /* was 18px — this adds real breathing room */
   }
 
-  /* Hero: less “wall of content”, more breathing room */
+  /* Hero spacing */
   .hero{
     min-height:auto;
-    padding:8px 0 0;         /* space between header and hero */
+    padding:40px 0 20px;     /* space ABOVE & below hero */
   }
 
   .hero .content{
-    padding:56px 0 36px;     /* more top/bottom space around headline */
+    padding:60px 0 40px;     /* interior vertical spacing */
+    display:block;           /* prevents grid squeezing on narrow phones */
   }
 
-  /* CTAs: full-width buttons on mobile */
+  /* Full-width CTA buttons */
   .stack{
     flex-direction:column;
     align-items:stretch;
   }
-
   .stack .btn{
     width:100%;
     text-align:center;
   }
 
-  /* Pricing: single column on small screens */
+  /* Pricing stacks correctly */
   .pricing{
     grid-template-columns:1fr;
   }
+
+  /* Hide desktop nav on mobile */
+  .nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:#ffffff;
+    border-bottom:1px solid #e2e8f0;
+    padding:18px 28px;
+    flex-direction:column;
+    gap:12px;
+    z-index:1000;
+  }
+
+  /* Show dropdown when nav-open is active */
+  .header.nav-open .nav{
+    display:flex;
+  }
+}
 }
 </style>
 </head>

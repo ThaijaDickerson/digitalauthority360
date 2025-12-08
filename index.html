@@ -125,61 +125,24 @@ footer a{color:#fff}
 }
 /* Responsive */
 @media (max-width:640px){h1{font-size:34px}h2{font-size:26px}}
-  @media (max-width:768px){
-     .menu-toggle{
-    display:flex;   /* visible on mobile only */
-  /* Show burger, hide full nav by default */
-  .menu-toggle{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .header .inner{
-    gap:10px;
-  }
-
-  .nav{
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    background:#ffffff;
-    border-bottom:1px solid #e2e8f0;
-    padding:12px 24px 16px;
-    display:none;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .nav a{
-    margin:6px 0;
-  }
-
-  /* When header has nav-open, show the menu */
-  .header.nav-open .nav{
-    display:flex;
-  }
-}
 @media (max-width:768px){
 
-  /* More buffer on mobile */
+  /* Increase breathing room left/right */
   .container{
-    padding:0 28px;          /* was 18px — this adds real breathing room */
+    padding:0 28px;
   }
 
-  /* Hero spacing */
+  /* Better spacing under sticky header */
   .hero{
-    min-height:auto;
-    padding:40px 0 20px;     /* space ABOVE & below hero */
+    min-height:auto;        /* let hero shrink naturally */
+    padding:36px 0 12px;    /* top padding gives real visual space */
   }
 
   .hero .content{
-    padding:60px 0 40px;     /* interior vertical spacing */
-    display:block;           /* prevents grid squeezing on narrow phones */
+    padding:70px 0 42px;    /* more white space around headline */
   }
 
-  /* Full-width CTA buttons */
+  /* Full-width buttons on mobile */
   .stack{
     flex-direction:column;
     align-items:stretch;
@@ -189,30 +152,30 @@ footer a{color:#fff}
     text-align:center;
   }
 
-  /* Pricing stacks correctly */
+  /* Pricing in one column on small screens */
   .pricing{
     grid-template-columns:1fr;
   }
 
-  /* Hide desktop nav on mobile */
+  /* Mobile dropdown nav */
   .nav{
-    display:none;
     position:absolute;
     top:100%;
     left:0;
     right:0;
     background:#ffffff;
     border-bottom:1px solid #e2e8f0;
-    padding:18px 28px;
+    padding:16px 28px;
+    display:none;
     flex-direction:column;
     gap:12px;
     z-index:1000;
   }
-
-  /* Show dropdown when nav-open is active */
   .header.nav-open .nav{
     display:flex;
   }
+}
+
 }
 }
 </style>

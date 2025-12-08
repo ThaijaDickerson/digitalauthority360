@@ -27,7 +27,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,'Noto Sans',sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-.container{max-width:960px;margin:0 auto;padding:0 24px}
+.container{max-width:960px;margin:0 auto;padding:0 28px}
 /* Header */
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0}
 .header .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
@@ -82,24 +82,30 @@ footer a{color:#fff}
 .footer-inner{padding:30px 0}
 .small{font-size:12px;color:#cbd5e1}
 .hr{height:1px;background:#e2e8f0;margin:28px 0;opacity:.25}
-  /* Mobile menu button */
+ /* Mobile menu button */
 .menu-toggle{
-  display:none;                /* hidden on desktop */
+  display:none;                 /* hidden on desktop */
   border:none;
   background:transparent;
   padding:8px;
   margin-left:auto;
   border-radius:999px;
   cursor:pointer;
+
+  /* make sure the bars stack vertically */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
 }
 
 .menu-toggle span{
   display:block;
-  width:20px;
-  height:2px;
+  width:22px;                   /* a bit wider */
+  height:3px;                   /* thicker so you can see them */
   background-color:var(--muted);
   border-radius:999px;
-  margin:3px 0;
   transition:transform .2s ease, opacity .2s ease;
 }
 
@@ -149,19 +155,20 @@ footer a{color:#fff}
     display:flex;
   }
 }
- @media (max-width:768px){
-  /* Slightly tighter container on mobile for buffer */
+@media (max-width:768px){
+  /* More side buffer on mobile */
   .container{
-    padding:0 18px;
+    padding:0 22px;
   }
 
-  /* Hero: reduce height & add breathing room */
+  /* Hero: less “wall of content”, more breathing room */
   .hero{
     min-height:auto;
+    padding:8px 0 0;         /* space between header and hero */
   }
 
   .hero .content{
-    padding:40px 0 32px;
+    padding:56px 0 36px;     /* more top/bottom space around headline */
   }
 
   /* CTAs: full-width buttons on mobile */
@@ -175,7 +182,7 @@ footer a{color:#fff}
     text-align:center;
   }
 
-  /* Pricing: force single column on small screens */
+  /* Pricing: single column on small screens */
   .pricing{
     grid-template-columns:1fr;
   }
@@ -246,7 +253,9 @@ footer a{color:#fff}
     </div>
   </div>
   <div class="hr"></div>
-  <div class="img-wrap"><img alt="Before vs After — Assumed vs Verified Authority" <img src="Before & Afterv1.png" />
+  <div class="img-wrap">
+  <img alt="Before vs After — Assumed vs Verified Authority" src="Before & Afterv1.png">
+</div>
 </section>
 
 <section class="container" id="baseline">
@@ -264,7 +273,9 @@ footer a{color:#fff}
   <h2>Our TRUTH Process</h2>
   <p class="lead">Trace → Reveal → Unify → Test → Harden.</p>
   30 days from assumed authority to a verified, machine‑readable authority model with a plan to implement.</p>
-  <div class="img-wrap"><img alt="TRUTH process visual" <img src="The TRUTH Framework.png" />
+  <div class="img-wrap">
+  <img alt="TRUTH process visual" src="The TRUTH Framework.png">
+</div>
 </section>
 
 <section class="container" id="pricing">

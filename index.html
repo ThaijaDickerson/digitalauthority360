@@ -4,8 +4,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="xxxxxxxxxxxxxxxxxxxx" /
-  <meta name="google-site-verification" content="xxxxxxx">
-
+ 
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
@@ -175,67 +174,66 @@ footer a{color:#fff}
 }
 @media (max-width:768px){
 
-  /* More buffer on mobile */
-  .container{
-    padding:0 28px;          /* was 18px — this adds real breathing room */
+  /* Show hamburger icon on mobile */
+  .menu-toggle{
+    display:flex;
   }
 
-  /* Hero spacing */
-  .hero{
-    min-height:auto;
-    padding:40px 0 20px;     /* space ABOVE & below hero */
-  }
-
-  .hero .content{
-    padding:60px 0 40px;     /* interior vertical spacing */
-    display:block;           /* prevents grid squeezing on narrow phones */
-  }
-
-  /* Full-width CTA buttons */
-  .stack{
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .stack .btn{
-    width:100%;
-    text-align:center;
-  }
-
-  /* Pricing stacks correctly */
-  .pricing{
-    grid-template-columns:1fr;
-  }
-
-  /* Hide desktop nav on mobile */
+  /* Hide desktop navigation by default */
   .nav{
     display:none;
     position:absolute;
     top:100%;
     left:0;
     right:0;
-    background:#ffffff;
-    border-bottom:1px solid #e2e8f0;
-    padding:18px 28px;
+    background:#fff;
+    padding:22px 28px 24px;
     flex-direction:column;
-    gap:12px;
+    gap:14px;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
     z-index:1000;
   }
 
-  /* Show dropdown when nav-open is active */
+  /* When menu is open, display nav */
   .header.nav-open .nav{
     display:flex;
+  }
+
+  /* Container spacing for mobile */
+  .container{
+    padding:0 22px;
+  }
+
+  /* Mobile hero spacing */
+  .hero{
+    min-height:auto;
+    padding:36px 0 12px;
+  }
+
+  .hero .content{
+    padding:70px 0 40px;
+  }
+
+  /* Stack CTA buttons vertically */
+  .stack{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .stack .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  /* Pricing: single column on small screens */
+  .pricing{
+    grid-template-columns:1fr;
   }
 }
 }
 </style>
   <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-515793671');
-</script>
 </head>
 <body>
 <header class="header">
@@ -253,9 +251,14 @@ footer a{color:#fff}
       <a href="#process">TRUTH</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" class="btn secondary">Book Briefing</a>
-       target="_blank"   onclick="gtag('event', 'book briefing');"  
-      </nav>
+      <a 
+  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+  class="btn secondary"
+  target="_blank"
+  onclick="gtag('event', 'book_briefing');"
+>
+  Book Briefing
+</a>
   </div>
 </header>
          
@@ -267,9 +270,10 @@ footer a{color:#fff}
     <div class="stack">
     <a 
   href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" 
-  class="btn accent"    onclick="gtag('event', 'Book a 20-min Executive Briefing');"
-       target="_blank"
-  >
+  class="btn accent"
+  target="_blank"
+  onclick="gtag('event', 'book_briefing');"
+>
   Book a 20-min Executive Briefing
 </a>
       <a href="#pricing" class="btn light">See Pricing</a>
@@ -320,8 +324,8 @@ footer a{color:#fff}
 
 <section class="container" id="process">
   <h2 class="callout">Our TRUTH Process</h2>
-  <p class="lead">Trace → Reveal → Unify → Test → Harden.</p>
-  30 days from assumed authority to a verified, machine‑readable authority model with a plan to implement.</p>
+ <p class="lead">Trace → Reveal → Unify → Test → Harden.</p>
+<p>30 days from assumed authority to a verified, machine-readable authority model with a plan to implement.</p>
   <div class="img-wrap">
   <img alt="TRUTH process visual" src="The TRUTH Framework.png">
 </div>
@@ -339,8 +343,14 @@ footer a{color:#fff}
         <li>Scorecard + Roadmap</li>
         <li>Verified Authority Blueprint (draft)</li>
       </ul>
-      <a class="btn" href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature">Book Briefing</a>
-        onclick="gtag('event', 'Book Briefing');"
+      <a 
+  class="btn"
+  target="_blank"
+  onclick="gtag('event', 'book_briefing');"
+  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+>
+  Book Briefing
+</a>
     </div>
     <div class="price">
       <span class="tag">Fix Gaps</span>
@@ -397,11 +407,11 @@ footer a{color:#fff}
 <h2 class="callout">Ready to Replace Assumed Authority with Verified Authority?</h2>
   <p class="lead">Start with a private 20‑minute executive briefing. We’ll quickly assess fit and timing, and outline what your 30‑day Baseline will deliver.</p>
   <div class="stack">
-  <a 
-  class="btn accent" 
-  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+ <a 
+  class="btn accent"
   target="_blank"
-    onclick="gtag('event', 'Request Briefing');"
+  onclick="gtag('event', 'request_briefing');"
+  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
 >
   Request Briefing
 </a>

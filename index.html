@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-site-verification" content="xxxxxxxxxxxxxxxxxxxx" /
+<meta name="google-site-verification" content="xxxxxxxxxxxxxxxxxxxx">
  
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -136,42 +136,6 @@ footer a{color:#fff}
 }
 /* Responsive */
 @media (max-width:640px){h1{font-size:34px}h2{font-size:26px}}
-  @media (max-width:768px){
-     .menu-toggle{
-    display:flex;   /* visible on mobile only */
-  /* Show burger, hide full nav by default */
-  .menu-toggle{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .header .inner{
-    gap:10px;
-  }
-
-  .nav{
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    background:#ffffff;
-    border-bottom:1px solid #e2e8f0;
-    padding:12px 24px 16px;
-    display:none;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .nav a{
-    margin:6px 0;
-  }
-
-  /* When header has nav-open, show the menu */
-  .header.nav-open .nav{
-    display:flex;
-  }
-}
 @media (max-width:768px){
 
   /* Show hamburger icon on mobile */
@@ -231,7 +195,6 @@ footer a{color:#fff}
     grid-template-columns:1fr;
   }
 }
-}
 </style>
   <!-- GA4 -->
 </head>
@@ -245,21 +208,22 @@ footer a{color:#fff}
       <span></span>
       <span></span>
     </button>
-    <nav class="nav">
-      <a href="#why">Why Now</a>
-      <a href="#baseline">Baseline</a>
-      <a href="#process">TRUTH</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a 
-  href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
-  class="btn secondary"
-  target="_blank"
-  onclick="gtag('event', 'book_briefing');"
->
-  Book Briefing
-</a>
-  </div>
+   <nav class="nav">
+  <a href="#why">Why Now</a>
+  <a href="#baseline">Baseline</a>
+  <a href="#process">TRUTH</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a 
+    href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+    class="btn secondary"
+    target="_blank"
+    onclick="gtag('event', 'book_briefing');"
+  >
+    Book Briefing
+  </a>
+</nav>
+</div> <!-- .inner -->
 </header>
          
 <section class="hero">

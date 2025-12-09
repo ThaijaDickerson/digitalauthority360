@@ -217,6 +217,14 @@ footer a{color:#fff}
 }
 }
 </style>
+  <!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-515793671');
+</script>
 </head>
 <body>
 <header class="header">
@@ -235,6 +243,8 @@ footer a{color:#fff}
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" class="btn secondary">Book Briefing</a>
+       target="_blank"
+   onclick="gtag('event', 'book briefing');"
     </nav>
   </div>
 </header>
@@ -248,8 +258,9 @@ footer a{color:#fff}
     <a 
   href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" 
   class="btn accent" 
-  target="_blank"
->
+       target="_blank"
+   onclick="gtag('event', 'Book a 20-min Executive Briefing');"
+ >
   Book a 20-min Executive Briefing
 </a>
       <a href="#pricing" class="btn light">See Pricing</a>
@@ -320,6 +331,7 @@ footer a{color:#fff}
         <li>Verified Authority Blueprint (draft)</li>
       </ul>
       <a class="btn" href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature">Book Briefing</a>
+        onclick="gtag('event', 'Book Briefing');"
     </div>
     <div class="price">
       <span class="tag">Fix Gaps</span>
@@ -380,6 +392,7 @@ footer a{color:#fff}
   class="btn accent" 
   href="https://outlook.office.com/bookwithme/user/6f3f6d79f93948ce8963f073b680a667@kontrakiq.io?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
   target="_blank"
+    onclick="gtag('event', 'Request Briefing');"
 >
   Request Briefing
 </a>
